@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="overflow">
+    {% if rows != [] %}
+        {% for row in rows %}
+            <div class="card" data-id={{ row["uid"] }} data-title={{ row["title"] }}>
+                <h2 class="title">{{ row["title"] }}</h2>
+                <p class="desc"> 
+                    {{ row["desc"] }}
+                </p>
+                <p class="by" >~ {{ row["name"] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+            <div class="to-center">
+                <h3>No posts yet! Login to write one</h3>
+            </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    document.querySelectorAll(".card").forEach((card)=>{
+        card.addEventListener("click", ()=>{
+            id = card.dataset.id;
+            title = card.dataset.title
+            url = window.location.href;
+            newurl = url + `getblog?id=${id}&title=${title}`;
+            window.open(newurl, "_self")
+        })
+    })
+</script>
+{% endblock %}

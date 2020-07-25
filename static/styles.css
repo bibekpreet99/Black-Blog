@@ -1,0 +1,129 @@
+body
+{
+    background-color: gainsboro;
+    height: 100vh;
+}
+
+.back-black
+{
+    background-color: black;
+    color: white;
+    padding: 0.2em;
+    border-radius: 5px;
+    
+}
+
+.center
+{
+    display: inline-block;
+    width: auto;
+}
+
+main
+{
+    text-align: center;
+    overflow-x: auto;
+    margin-top: 100px;
+}
+
+.input
+{
+    width: calc(100vw * 0.2);
+}
+
+.input-text
+{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.input-text:focus
+{
+    border: 2px solid black;
+    box-shadow: none;
+    color: black;
+}
+
+.my-button
+{
+    background-color: black;
+    border: none;
+}
+
+.card
+{
+    width: calc(100vw * 0.5);
+    border: 2px solid red;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px black;
+    cursor: pointer;
+}
+
+.overflow
+{
+    margin-bottom: 40px;
+}
+
+.to-center
+{
+    text-align: center;
+}
+
+.by
+{
+    margin-left: auto;
+    display: inline-block;
+    font-style: italic;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.btitle
+{
+    width: calc(100vw * 0.6);
+}
+
+.bdesc
+{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.bblog
+{
+    color: black;
+    font-weight: 300;
+}
+.by2
+{
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.footer
+{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    background-color: #343A40;
+    padding-top: 5px;
+    color: white;
+    margin: 0;
+}
+a
+{
+    color: inherit;
+}
+footer
+{
+    margin-top: 20px;
+}
