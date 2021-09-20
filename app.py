@@ -4,6 +4,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from tempfile import mkdtemp
 from cs50 import SQL
+import os
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -22,11 +23,11 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 app.debug = True
 
-db = SQL("sqlite:///blog.db")
+db = SQL(os.environ.get('DATABASE_URL'))
 
 @app.route("/")
 def index():
-    rows = db.execute("select title, desc, uid from blogdata")
+    rows = db.execute("select title, descr, uid from blogdata")
     rows = rows[::-1]
     print(rows)
     if rows != []:
@@ -81,15 +82,15 @@ def logout():
 def getBlog():
     bid = request.args.get("id")
     btitle = request.args.get("title")
-    row = db.execute("select title, desc, blog from blogdata where uid = :id and title = :title", id = bid, title = btitle)
+    row = db.execute("select title, descr, blog from blogdata where uid = :id and title = :title", id = bid, title = btitle)
     print(row)
     if len(row) != 1:
         return render_template("error.html", msg="Post doesnot exist")
     name = db.execute("select name from users where id = :id", id=bid)
     title = row[0]["title"]
-    desc = row[0]["desc"]
+    descr = row[0]["descr"]
     blog = Markup(row[0]["blog"])
-    return render_template("getblog.html", title = title, desc = desc, blog = blog, name = name[0]["name"])
+    return render_template("getblog.html", title = title, descr = descr, blog = blog, name = name[0]["name"])
 
 @app.route("/write", methods = ["GET", "POST"])
 @login_required
@@ -98,7 +99,7 @@ def write():
         return render_template("write.html")
     else:
         title = request.form.get("title")
-        desc = request.form.get("desc")
+        descr = request.form.get("descr")
         blog = request.form.get("blog")
-        db.execute("Insert into blogdata(title, desc, blog, uid) values(:title, :desc, :blog, :uid)", title = title, desc = desc, blog = blog, uid = session["user_id"])
+        db.execute("Insert into blogdata(title, descr, blog, uid) values(:title, :descr, :blog, :uid)", title = title, descr = descr, blog = blog, uid = session["user_id"])
         return redirect("/")
