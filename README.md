@@ -11,9 +11,10 @@ Stack Used
 https://blogggit.herokuapp.com
 
 ### Novelty
-1. All the code is written and is not copied from anywhere.
-2. All the designs and ideas are my own.
-3. The logic to prevent anyone from writing without loggin in is developed.
+1. Easy login and Register options.
+2. Dont need unnecessary details while logging in.
+3. Anyone can Blog about whatever they want.
+4. All the code is self written.
 
 ### FlowChart
 
