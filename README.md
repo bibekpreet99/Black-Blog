@@ -4,7 +4,7 @@
 This is a blogging website where you can login and register yourself if you want to write and read blogs. Anyone can read blogs without loggin in.
 Stack Used
 1. Flask
-2. SQLite3
+2. postgreSQL
 3. HTML/CSS
 
 ### Live Link
