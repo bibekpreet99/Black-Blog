@@ -2,6 +2,10 @@
 
 ### Overview
 This is a blogging website where you can login and register yourself if you want to write and read blogs. Anyone can read blogs without loggin in.
+Stack Used
+. Flask
+. SQLite3
+. HTML/CSS
 
 ### Live Link
 https://blogggit.herokuapp.com
