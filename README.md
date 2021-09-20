@@ -13,7 +13,7 @@ https://blogggit.herokuapp.com
 
 ### FlowChart
 
-![flow](screenshot/flow.png)
+![flow](screenshots/flow.png)
 
 
 ### Screenshots
